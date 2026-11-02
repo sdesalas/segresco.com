@@ -1,0 +1,142 @@
+/* SEGRESCO Construcciones y Reformas */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	padding: 16px;
+	font: 16px/1.55 Arial, Helvetica, sans-serif;
+	color: #fff;
+	background: #393939 url(../img/pageBackground.gif) repeat-x;
+}
+
+img { max-width: 100%; height: auto; border: 0; }
+
+a { color: #F6E879; font-weight: bold; text-decoration: none; }
+a:hover, a:focus { color: #fff; }
+
+h1, h2, h3, h4 { color: #EED607; margin: 0 0 12px; padding-bottom: 6px; line-height: 1.25; }
+h2 { font-size: 1.2em; font-variant: small-caps; border-bottom: 1px dotted #fff; }
+h3 { font-size: 1.1em; font-variant: small-caps; }
+p { margin: 0 0 15px; }
+
+/* FRAME */
+
+.frame {
+	max-width: 902px; /* header/title background images are 900px wide */
+	margin: 0 auto;
+	padding: 1px;
+	background: #919191;
+}
+.dots {
+	height: 7px;
+	margin: 3px;
+	background: url(../img/topBackground.gif) no-repeat left;
+}
+
+/* HEADER */
+
+.header {
+	background: #000 url(../img/headerBackground.gif) no-repeat right top;
+	padding: 20px 20px 0;
+}
+.logo { display: inline-block; }
+.logo img { display: block; width: 238px; }
+
+.menu ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 34px;
+	margin: 0;
+	padding: 34px 0 12px;
+	list-style: none;
+	font-family: "Arial Black", Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+.menu a { color: #ccc; font-weight: normal; }
+.menu a:hover, .menu a:focus { color: #F6E879; }
+.menu .current { padding-left: 12px; background: url(../img/menuLev1Arrow.gif) no-repeat left center; }
+.menu .current a { color: #EED607; }
+
+.submenu { background: #F6E879; min-height: 30px; }
+.submenu ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 4px 8px;
+	list-style: none;
+	font-size: 0.85em;
+}
+.submenu a { display: block; padding: 3px 12px; color: #333; font-weight: normal; }
+.submenu a:hover, .submenu a:focus { background: #FCF8D7; color: #333; }
+.submenu .current a { font-weight: bold; }
+
+.title {
+	display: flex;
+	align-items: center;
+	height: 55px; /* matches titleBackground.gif */
+	padding: 0 20px;
+	background: #666 url(../img/titleBackground.gif) no-repeat right center;
+}
+.title h1 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font: 1.5em "Arial Black", Arial, Helvetica, sans-serif;
+	letter-spacing: 0.4em;
+	text-transform: uppercase;
+	border: 0;
+}
+.separator { height: 16px; background: #919191; }
+
+/* CONTENT */
+
+.content {
+	display: flow-root; /* contain floated images */
+	padding: 24px 30px 40px 20px;
+	background: #000 url(../img/topRightBackground.jpg) no-repeat right top;
+}
+.content ul { padding-left: 2em; }
+
+.alignleft { float: left; margin: 0 20px 15px 0; }
+.alignright { float: right; margin: 0 0 15px 20px; }
+
+.trades { columns: 2; max-width: 420px; }
+
+.contact { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0 0 15px; }
+.contact dt { font-weight: bold; }
+.contact dd { margin: 0; }
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin: 0 0 30px;
+}
+.gallery img { display: block; height: 170px; width: auto; object-fit: cover; }
+.gallery-wide { flex-direction: column; align-items: center; }
+.gallery-wide img { height: auto; width: 680px; }
+
+/* FOOTER */
+
+.footer { padding: 14px; text-align: center; font-size: 0.8em; color: #888; }
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+	body { padding: 0; }
+	.header { padding: 14px 14px 0; background-size: auto 90px; }
+	.logo img { width: 180px; }
+	.menu { margin: 14px -14px 0; padding: 0 14px; background: #000; }
+	.menu ul { gap: 4px 18px; padding: 10px 0; font-size: 0.75em; }
+	.title { padding: 0 14px; }
+	.title h1 { font-size: 1.2em; letter-spacing: 0.2em; }
+	.content { padding: 20px 16px 30px; }
+	.alignleft, .alignright { float: none; display: block; margin: 0 auto 15px; }
+	.gallery { display: grid; grid-template-columns: 1fr 1fr; }
+	.gallery img { width: 100%; height: auto; aspect-ratio: 5 / 3; }
+	.gallery-wide { grid-template-columns: 1fr; }
+	.gallery-wide img { aspect-ratio: auto; }
+}
