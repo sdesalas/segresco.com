@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.segresco.com/sitemap.xml
+Sitemap: https://segresco.com/sitemap.xml
